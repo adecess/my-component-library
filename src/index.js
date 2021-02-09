@@ -6,6 +6,7 @@ import { GlobalStyle, darkTheme, defaultTheme } from "./utils";
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(false);
+  const [showModal, setShowModal] = useState(true);
 
   return (
     <ThemeProvider theme={useDarkTheme ? darkTheme : defaultTheme}>
@@ -21,6 +22,12 @@ const App = () => {
       >
         Default Theme
       </button>
+      <button
+        style={{ margin: "0 16px 24px", padding: "8px", background: "none" }}
+        onClick={() => setShowModal(!showModal)}
+      >
+        Toggle Modal
+      </button>
       <div
         style={{
           background: useDarkTheme
@@ -33,7 +40,7 @@ const App = () => {
           justifyContent: "space-around",
         }}
       >
-        <SignUpModal />
+        <SignUpModal showModal={showModal} setShowModal={setShowModal} />
       </div>
       <GlobalStyle />
     </ThemeProvider>
