@@ -3,7 +3,7 @@ import styled from "styled-components/";
 import { useSpring, animated, config } from "react-spring";
 import { typeScale } from "../utils";
 import { Illustrations, CloseIcon } from "../assets";
-import { PrimaryButton } from "./Button";
+import { PrimaryButton } from "./Buttons";
 
 const ModalWrapper = styled.div`
   width: 800px;
